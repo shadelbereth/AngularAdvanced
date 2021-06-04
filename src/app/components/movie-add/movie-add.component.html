@@ -1,0 +1,21 @@
+<h3 class="center">Add a movie</h3>
+<form #searchForm="ngForm" (ngSubmit)="search(searchForm)">
+  <label for="inputTitle">Search title</label>
+  <input id="inputTitle" (change)="checkForm(title)" name="title" ngModel #title="ngModel" required minlength="2" [class.invalid]=" title.invalid || title.pristine || title.untouched " >
+  <p *ngIf="title.errors?.required && title.touched" class="error">Title input is required!</p>
+  <p *ngIf="title.errors?.minlength" class="error">Minimum length of the title is ! {{title.errors?.minlength.requiredLength}}, actual length {{title.errors?.minlength.actualLength}}</p>
+
+  <input type="submit" class="btn" [disabled]="title.invalid">
+</form>
+
+<app-list [movies]="foundMovies" (add)="addSelectedMovieAndDetail($event)"></app-list>
+
+<!--<ul class="collection">-->
+<!--  <li class="collection-item avatar" *ngFor="let movie of foundMovies">-->
+<!--    <a (click)="addSelectedMovieAndDetail(movie)">-->
+<!--      <img [src]="movie.poster" alt="{{movie.title}}"/>-->
+<!--      <span class="title">{{movie.title}}</span>-->
+<!--    </a>-->
+
+<!--  </li>-->
+<!--</ul>-->

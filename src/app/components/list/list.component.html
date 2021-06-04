@@ -1,0 +1,12 @@
+<h3 class="center">My private collection</h3>
+<ul class="collection">
+  <li class="collection-item avatar" *ngFor="let movie of movies">
+    <a (click)="add.emit(movie)">
+      <img [src]="movie.poster" alt="{{movie.title}}"/>
+      <span class="title">{{movie.title}}</span>
+    </a>
+
+  </li>
+</ul>
+
+<!--[routerLink]="['/movie/detail', movie.id]"-->
