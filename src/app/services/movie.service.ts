@@ -4,6 +4,7 @@ import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {Subject} from "rxjs";
 import {timeInterval} from "rxjs/operators";
+import {ConfigService} from "./config.service";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,9 @@ import {timeInterval} from "rxjs/operators";
 export class MovieService {
 
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private config: ConfigService) {
+    console.log("env: ", config.getEnv("env"))
+    console.log("host:", config.getConfig("host"))
   }
 
   getMovies() {
@@ -23,14 +26,14 @@ export class MovieService {
   }
 
   lookupMovie(searchTitle: string) {
-    return this.http.get<Movie[]>(`${environment.movieApiUrl}/search`, {params: {title: searchTitle}});
+    return this.http.get<Movie[]>(`${environment.movieApiUrl}/search`, {params: {title: searchTitle}}).toPromise();
   }
 
   addMovie(onlineId: string | undefined) {
-    return this.http.post<Movie>(`${environment.movieApiUrl}`, {"apiId": onlineId});
+    return this.http.post<Movie>(`${environment.movieApiUrl}`, {"apiId": onlineId}).toPromise();
   }
 
   delete(id: number | undefined) {
-    return this.http.delete( `${environment.movieApiUrl}/${id}`);
+    return this.http.delete( `${environment.movieApiUrl}/${id}`).toPromise();
   }
 }

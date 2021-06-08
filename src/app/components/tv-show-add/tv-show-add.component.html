@@ -1,0 +1,5 @@
+<h2 class="center">Search and add a TV show to my watch list</h2>
+<app-search (searchedItem)="searchTvShow($event)"></app-search>
+<h3 class="center">My tv show collection</h3>
+<app-list [myItemList]="tvShows" (selected)="addToWatchListAndGoToDetail($event)"></app-list>
+

@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  movieApiUrl : 'https://angularcoursebackend.azurewebsites.net/api/movies'
+  movieApiUrl : 'https://angularcoursebackend.azurewebsites.net/api/movies',
+  tvShowApiUrl: 'https://angularcoursebackend.azurewebsites.net/api/tvshows'
+
 };
 
 /*

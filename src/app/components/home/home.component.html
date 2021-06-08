@@ -1,0 +1,20 @@
+<h1>Welcome to the media app</h1>
+<div class="p-grid">
+  <div class="p-col-6">
+    <p-card>
+      Go to my Movie collection
+      <ng-template pTemplate="footer">
+        <p-button [routerLink]="['/movie/home']">Movies</p-button>
+      </ng-template>
+    </p-card>
+  </div>
+
+  <div class="p-col-6">
+    <p-card>
+      Go to Tv Show Watchlist
+      <ng-template pTemplate="footer">
+        <p-button [routerLink]="['/tvshow/home']">Tv Show</p-button>
+      </ng-template>
+    </p-card>
+  </div>
+</div>

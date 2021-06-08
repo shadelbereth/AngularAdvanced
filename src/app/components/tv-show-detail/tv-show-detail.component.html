@@ -1,0 +1,24 @@
+<h1>TvShow detail</h1>
+<p-card>
+  <ng-template pTemplate="header">
+    <div class="p-grid item-list-item">
+      <img class="p-lg-3" src="{{foundTvShow?.poster}}" alt="{{foundTvShow?.title}}">
+      <div class="p-grid p-lg-9">
+        <div class="p-lg-6">
+          <p>Title: {{foundTvShow?.title}}</p>
+          <p>Year: {{foundTvShow?.year}}</p>
+          <p *ngIf="foundTvShow?.status">Seen: {{foundTvShow?.status}}</p>
+        </div>
+        <div class="p-lg-6">
+          <p *ngIf="foundTvShow?.runtime">RunTime: {{foundTvShow?.runtime}}</p>
+        </div>
+        <div class="p-lg-12">
+          <span *ngIf="foundTvShow?.overview">Plot: {{foundTvShow?.overview}}</span>
+        </div>
+      </div>
+    </div>
+    <p-button routerLink="/tvshow/home">Go Back</p-button>
+    <p-button (click)="delete(foundTvShow)">Delete</p-button>
+  </ng-template>
+
+</p-card>

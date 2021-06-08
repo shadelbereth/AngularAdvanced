@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {MovieService} from "../../services/movie.service";
 import {Movie} from "../../models/Movie";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -6,7 +6,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 @Component({
   selector: 'app-movie-detail',
   templateUrl: './movie-detail.component.html',
-  styleUrls: ['./movie-detail.component.css']
+  styleUrls: ['./movie-detail.component.scss']
 })
 export class MovieDetailComponent implements OnInit {
 
@@ -21,7 +21,7 @@ export class MovieDetailComponent implements OnInit {
   }
 
   delete(movie: Movie | undefined) {
-    this.movieService.delete(movie?.id).subscribe(() => this.router.navigate(["/movie/home"]));
+    this.movieService.delete(movie?.id).then(() => this.router.navigate(["/movie/home"]));
   }
 
   back() {

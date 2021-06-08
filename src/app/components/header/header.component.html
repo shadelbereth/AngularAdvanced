@@ -1,10 +1,15 @@
 <div class="navbar-fixed">
   <nav>
-    <div class="nav-wrapper center">
-      <span class="brand-logo" routerLink="/movie/list">{{title}}</span>
-      <ul>
-        <li><a routerLink="/movie/add">Add a movie</a></li>
-      </ul>
-    </div>
+    <p-menubar [model]="items">
+      <ng-template pTemplate="start">
+        <img routerLink="home" src="../../../assets/Apps-Player-Video-icon.png" height="40" class="p-mr-2">
+      </ng-template>
+    </p-menubar>
+<!--    <div class="nav-wrapper center">-->
+<!--      <span class="brand-logo" routerLink="/movie/list">{{title}}</span>-->
+<!--      <ul>-->
+<!--        <li><a routerLink="/movie/add">Add a movie</a></li>-->
+<!--      </ul>-->
+<!--    </div>-->
   </nav>
 </div>

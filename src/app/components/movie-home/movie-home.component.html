@@ -1,2 +1,2 @@
 <h1>Welcome</h1>
-<app-list [movies]="foundMovies"></app-list>
+<app-list [myItemList]="foundMovies" (selected)="showDetail($event)"></app-list>

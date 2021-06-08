@@ -1,12 +1,53 @@
-<h3 class="center">My private collection</h3>
-<ul class="collection">
-  <li class="collection-item avatar" *ngFor="let movie of movies">
-    <a (click)="add.emit(movie)">
-      <img [src]="movie.poster" alt="{{movie.title}}"/>
-      <span class="title">{{movie.title}}</span>
-    </a>
+<div class="card">
+  <p-dataView #dv [value]="myItemList" [paginator]="true" [rows]="9" filterBy="name"
+              [sortField]="sortField" [sortOrder]="sortOrder" layout="grid">
+    <ng-template pTemplate="header">
+      <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
+        <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By Title"
+                    (onChange)="onSortChange($event)" styleClass="p-mb-2 p-mb-md-0"></p-dropdown>
+        <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+      </div>
+    </ng-template>
+    <ng-template let-item pTemplate="listItem">
+      <div class="p-col-12">
+        <div class="item-list-item">
+          <img [src]="item.poster" [alt]="item.title"/>
+          <div class="item-list-detail">
+            <div class="item-name">{{item.title}}</div>
+          </div>
+          <div class="item-list-action">
+            <p-button *ngIf="hideAddButton" icon="pi pi-plus-circle" (click)="selected.emit(item)"></p-button>
+            <p-button *ngIf="!hideAddButton" icon="pi pi-info-circle" (click)="selected.emit(item)"></p-button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template let-item pTemplate="gridItem">
+      <div class="p-col-12 p-md-4">
+        <div class="item-grid-item card">
+          <div class="item-grid-item-content">
+            <img [src]="item.poster" [alt]="item.title"/>
+            <div class="item-name">{{item.title}}</div>
+          </div>
+          <div class="item-grid-item-bottom">
+            <p-button *ngIf="hideAddButton" icon="pi pi-plus-circle" (click)="selected.emit(item)"></p-button>
+            <p-button *ngIf="!hideAddButton" icon="pi pi-info-circle" (click)="selected.emit(item)"></p-button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-dataView>
+</div>
 
-  </li>
-</ul>
+
+<!--<ul class="collection">-->
+<!--  <li class="collection-item avatar" *ngFor="let movie of movies">-->
+<!--    <a (click)="add.emit(movie)">-->
+<!--      <img [src]="movie.poster" alt="{{movie.title}}"/>-->
+<!--      <span class="title">{{movie.title}}</span>-->
+<!--    </a>-->
+
+<!--  </li>-->
+<!--</ul>-->
 
 <!--[routerLink]="['/movie/detail', movie.id]"-->

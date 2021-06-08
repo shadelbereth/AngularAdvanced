@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MovieService} from "../../services/movie.service";
 import {Movie} from "../../models/Movie";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-movie-home',
@@ -10,7 +11,7 @@ import {Movie} from "../../models/Movie";
 export class MovieHomeComponent implements OnInit { //Parent
   foundMovies: Movie[] = [];
 
-  constructor(private movieService: MovieService) {
+  constructor(private movieService: MovieService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -19,4 +20,7 @@ export class MovieHomeComponent implements OnInit { //Parent
     });
   }
 
+  showDetail(movie: Movie) {
+    this.router.navigate(["movie/detail", movie.id]);
+  }
 }
