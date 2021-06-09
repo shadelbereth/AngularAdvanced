@@ -2,14 +2,14 @@ import {Injectable} from '@angular/core';
 import {Movie} from "../models/Movie";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
-import {Subject} from "rxjs";
-import {timeInterval} from "rxjs/operators";
+import {Observable} from "rxjs";
 import {ConfigService} from "./config.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
+  private static count: number = 0;
 
 
   constructor(private http: HttpClient, private config: ConfigService) {
@@ -35,5 +35,14 @@ export class MovieService {
 
   delete(id: number | undefined) {
     return this.http.delete( `${environment.movieApiUrl}/${id}`).toPromise();
+  }
+
+  test () {
+    MovieService.count += 1
+    return new Observable(subscriber => {
+      setInterval(() => {
+        subscriber.next("subscription count: " + MovieService.count)
+      }, 1000);
+    });
   }
 }
