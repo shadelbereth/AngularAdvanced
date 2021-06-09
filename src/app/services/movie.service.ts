@@ -43,6 +43,9 @@ export class MovieService {
       setInterval(() => {
         subscriber.next("subscription count: " + MovieService.count)
       }, 1000);
+      setTimeout(() => {
+        subscriber.complete();
+      }, 1500);
     });
   }
 }

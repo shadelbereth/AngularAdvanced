@@ -2,7 +2,6 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {MovieService} from "../../services/movie.service";
 import {Movie} from "../../models/Movie";
 import {Router} from "@angular/router";
-import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-movie-home',
@@ -11,7 +10,6 @@ import {Subscription} from "rxjs";
 })
 export class MovieHomeComponent implements OnInit, OnDestroy { //Parent
   foundMovies: Movie[] = [];
-  private subscription: Subscription | undefined;
 
   constructor(private movieService: MovieService, private router: Router) {
   }
@@ -20,11 +18,10 @@ export class MovieHomeComponent implements OnInit, OnDestroy { //Parent
     this.movieService.getMovies().then(movieResponse => {
       this.foundMovies = movieResponse
     });
-    this.subscription = this.movieService.test().subscribe(value => console.log("subscribed: ", value));
+    this.movieService.test().subscribe(value => console.log("subscribed: ", value));
   }
 
   ngOnDestroy(): void {
-    this.subscription?.unsubscribe();
   }
 
   showDetail(movie: Movie) {
