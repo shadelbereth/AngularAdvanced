@@ -1,12 +1,12 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {ListComponent} from "./components/list/list.component";
-import {MovieDetailComponent} from "./components/movie-detail/movie-detail.component";
-import {MovieAddComponent} from "./components/movie-add/movie-add.component";
-import {MovieHomeComponent} from "./components/movie-home/movie-home.component";
-import {TvShowHomeComponent} from "./components/tv-show-home/tv-show-home.component";
-import {TvShowDetailComponent} from "./components/tv-show-detail/tv-show-detail.component";
-import {TvShowAddComponent} from "./components/tv-show-add/tv-show-add.component";
+import {MovieDetailComponent} from "./components/features/movies/movie-detail/movie-detail.component";
+import {MovieAddComponent} from "./components/features/movies/movie-add/movie-add.component";
+import {MovieHomeComponent} from "./components/pages/movie-home/movie-home.component";
+import {TvShowHomeComponent} from "./components/pages/tv-show-home/tv-show-home.component";
+import {TvShowDetailComponent} from "./components/features/tv-shows/tv-show-detail/tv-show-detail.component";
+import {TvShowAddComponent} from "./components/features/tv-shows/tv-show-add/tv-show-add.component";
 import {HomeComponent} from "./components/home/home.component";
 
 export const routes: Routes = [

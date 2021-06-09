@@ -4,9 +4,9 @@ import {MovieService} from "../../services/movie.service";
 import {Subscription} from "rxjs";
 import {SelectItem} from "primeng/api";
 import {ActivatedRoute, Router} from "@angular/router";
-import {MovieHomeComponent} from "../movie-home/movie-home.component";
+import {MovieHomeComponent} from "../pages/movie-home/movie-home.component";
 import {Item} from "../../models/Item";
-import {TvShowHomeComponent} from "../tv-show-home/tv-show-home.component";
+import {TvShowHomeComponent} from "../pages/tv-show-home/tv-show-home.component";
 
 @Component({
   selector: 'app-list',

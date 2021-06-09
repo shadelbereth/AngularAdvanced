@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {TvShow} from "../../models/TvShow";
-import {TvShowService} from "../../services/tv-show.service";
+import {TvShow} from "../../../../models/TvShow";
+import {TvShowService} from "../../../../services/tv-show.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {Movie} from "../../models/Movie";
+import {Movie} from "../../../../models/Movie";
 
 @Component({
   selector: 'app-tv-show-detail',

@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {MovieService} from "../../services/movie.service";
-import {Movie} from "../../models/Movie";
+import {MovieService} from "../../../../services/movie.service";
+import {Movie} from "../../../../models/Movie";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({

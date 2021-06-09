@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {TvShow} from "../../models/TvShow";
-import {TvShowService} from "../../services/tv-show.service";
+import {TvShow} from "../../../models/TvShow";
+import {TvShowService} from "../../../services/tv-show.service";
 import {Router} from "@angular/router";
-import {Item} from "../../models/Item";
+import {Item} from "../../../models/Item";
 
 @Component({
   selector: 'app-tv-show-home',
