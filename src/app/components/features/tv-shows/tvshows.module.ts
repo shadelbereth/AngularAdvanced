@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {SharedModule} from "../../shared/shared.module";
+import {TvShowAddComponent} from "./tv-show-add/tv-show-add.component";
+import {TvShowDetailComponent} from "./tv-show-detail/tv-show-detail.component";
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [TvShowAddComponent, TvShowDetailComponent],
   imports: [
-    CommonModule
+    SharedModule
   ]
 })
 export class TVShowsModule { }

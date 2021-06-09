@@ -4,12 +4,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './components/header/header.component';
-import {ListComponent} from './components/list/list.component';
-import {MovieDetailComponent} from './components/features/movies/movie-detail/movie-detail.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import {MovieAddComponent} from './components/features/movies/movie-add/movie-add.component';
 import {FormsModule} from "@angular/forms";
-import {MovieHomeComponent} from './components/pages/movie-home/movie-home.component';
 import {AuthInterceptor} from "./services/auth.interceptor";
 import {MenubarModule} from "primeng/menubar";
 import {DataViewModule} from "primeng/dataview";
@@ -20,28 +16,22 @@ import {CardModule} from "primeng/card";
 import {InputTextModule} from "primeng/inputtext";
 import {ConfigService} from "./services/config.service";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import { TvShowHomeComponent } from './components/pages/tv-show-home/tv-show-home.component';
-import { TvShowAddComponent } from './components/features/tv-shows/tv-show-add/tv-show-add.component';
-import { TvShowDetailComponent } from './components/features/tv-shows/tv-show-detail/tv-show-detail.component';
-import { SearchComponent } from './components/search/search.component';
 import { HomeComponent } from './components/home/home.component';
 import {InputSwitchModule} from "primeng/inputswitch";
+import {MoviesModule} from "./components/features/movies/movies.module";
+import {TVShowsModule} from "./components/features/tv-shows/tvshows.module";
+import {PagesModule} from "./components/pages/pages.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ListComponent,
-    MovieDetailComponent,
-    MovieAddComponent,
-    MovieHomeComponent,
-    TvShowHomeComponent,
-    TvShowAddComponent,
-    TvShowDetailComponent,
-    SearchComponent,
     HomeComponent
   ],
   imports: [
+    MoviesModule,
+    TVShowsModule,
+    PagesModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
