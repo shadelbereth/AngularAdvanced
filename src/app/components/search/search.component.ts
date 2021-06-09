@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {NgForm} from "@angular/forms";
-import {Item} from "../../models/Item";
+import {Subject} from "rxjs";
+import {debounceTime, distinctUntilChanged, filter} from "rxjs/operators";
 
 @Component({
   selector: 'app-search',
@@ -8,19 +8,18 @@ import {Item} from "../../models/Item";
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  inputTitle$ = new Subject<string>();
 
-  @Output() searchedItem: EventEmitter<Item> = new EventEmitter<Item>();
+  @Output() searchedItem: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() {
   }
 
   ngOnInit(): void {
-  }
-
-  search(searchForm: NgForm) {
-    console.log(searchForm);
-    if (searchForm.valid) {
-      this.searchedItem.emit(searchForm.value);
-    }
+    this.inputTitle$?.pipe(
+      debounceTime(400),
+      filter(value => value.length > 2),
+      distinctUntilChanged()
+    ).subscribe(value => this.searchedItem.emit(value));
   }
 }

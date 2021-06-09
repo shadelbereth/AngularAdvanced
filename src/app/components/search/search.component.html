@@ -1,14 +1,8 @@
-<form #searchForm="ngForm" (ngSubmit)="search(searchForm)">
-  <span class="p-float-label">
-  <input pInputText id="inputTitle" name="title" ngModel #title="ngModel" required
-         minlength="2"
-         [class.invalid]=" title.invalid || title.pristine || title.untouched ">
-      <label for="inputTitle">Search title</label>
-      <input type="submit" pButton [disabled]="title.invalid">
-
-  </span>
-  <p *ngIf="title.errors?.required && title.touched" class="error">Title input is required!</p>
-  <p *ngIf="title.errors?.minlength" class="error">Minimum length of the title
-    is: {{title.errors?.minlength.requiredLength}}, actual length: {{title.errors?.minlength.actualLength}}</p>
-
-</form>
+<span class="p-float-label">
+  <input pInputText id="inputTitle" name="title" ngModel #title="ngModel" required minlength="2" (input)="inputTitle$.next(title.value)" [class.invalid]=" title.invalid || title.pristine || title.untouched ">
+  <label for="inputTitle">Search title</label>
+</span>
+<p *ngIf="title.errors?.required && title.touched" class="error">Title input is required!</p>
+<p *ngIf="title.errors?.minlength" class="error">
+  Minimum length of the title is: {{title.errors?.minlength.requiredLength}}, actual length: {{title.errors?.minlength.actualLength}}
+</p>

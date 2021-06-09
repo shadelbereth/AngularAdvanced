@@ -19,8 +19,8 @@ export class TvShowAddComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  searchTvShow(searchedTvShow: Item) {
-    this.tvShowService.lookupTvShow(searchedTvShow.title).then(tvShowResponse => this.tvShows = tvShowResponse);
+  searchTvShow(title: string) {
+    this.tvShowService.lookupTvShow(title).then(tvShowResponse => this.tvShows = tvShowResponse);
   }
 
   addToWatchListAndGoToDetail(tvShow: Item) {

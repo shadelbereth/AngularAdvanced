@@ -1,9 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {NgForm, NgModel} from "@angular/forms";
 import {MovieService} from "../../services/movie.service";
 import {Movie} from "../../models/Movie";
 import {Router} from "@angular/router";
-import {Item} from "../../models/Item";
 
 @Component({
   selector: 'app-movie-add',
@@ -25,10 +23,10 @@ export class MovieAddComponent implements OnInit {
     });
   }
 
-  search(searchedMovie: Item) {
+  search(title: string) {
     // console.log(ngForm.form.controls.title.errors);
     // if (ngForm.valid) {
-    this.movieService.lookupMovie(searchedMovie.title).then(movieResponse => {
+    this.movieService.lookupMovie(title).then(movieResponse => {
       this.foundMovies = movieResponse
     });
     // }
