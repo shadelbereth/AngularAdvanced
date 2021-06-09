@@ -1,5 +1,10 @@
 <h2 class="center">Search and add a TV show to my watch list</h2>
-<app-search (searchedItem)="searchTvShow($event)"></app-search>
+<app-search (searchedItem)="searchTvShow($event, online)"></app-search>
+
+<p-inputSwitch [(ngModel)]="online"></p-inputSwitch>
+<span *ngIf="online">You're searching online</span>
+<span *ngIf="!online">You're searching in the private collection</span>
+
 <h3 class="center">My tv show collection</h3>
 <app-list [myItemList]="tvShows" (selected)="addToWatchListAndGoToDetail($event)"></app-list>
 

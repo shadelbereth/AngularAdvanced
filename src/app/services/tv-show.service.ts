@@ -19,8 +19,8 @@ export class TvShowService {
     return this.http.get<TvShow>(`${environment.tvShowApiUrl}/${id}`).toPromise();
   }
 
-  lookupTvShow(searchTitle: string) {
-    return this.http.get<TvShow[]>(`${environment.tvShowApiUrl}/search`, {params: {title: searchTitle}}).toPromise();
+  lookupTvShow(searchTitle: string, online: boolean) {
+    return this.http.get<TvShow[]>(`${environment.tvShowApiUrl}/search`, {params: {title: searchTitle, online: online}}).toPromise();
   }
 
   saveToWatchList(onlineId: string | undefined) {

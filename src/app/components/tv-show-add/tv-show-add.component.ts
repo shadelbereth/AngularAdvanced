@@ -12,6 +12,7 @@ import {Item} from "../../models/Item";
 export class TvShowAddComponent implements OnInit {
 
   tvShows: TvShow[] = [];
+  online: boolean = false;
 
   constructor(private tvShowService: TvShowService, private router: Router) {
   }
@@ -19,8 +20,8 @@ export class TvShowAddComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  searchTvShow(title: string) {
-    this.tvShowService.lookupTvShow(title).then(tvShowResponse => this.tvShows = tvShowResponse);
+  searchTvShow(title: string, online: boolean) {
+    this.tvShowService.lookupTvShow(title, online).then(tvShowResponse => this.tvShows = tvShowResponse);
   }
 
   addToWatchListAndGoToDetail(tvShow: Item) {

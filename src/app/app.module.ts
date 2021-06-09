@@ -12,7 +12,6 @@ import {FormsModule} from "@angular/forms";
 import {MovieHomeComponent} from './components/movie-home/movie-home.component';
 import {AuthInterceptor} from "./services/auth.interceptor";
 import {MenubarModule} from "primeng/menubar";
-import {ListboxModule} from "primeng/listbox";
 import {DataViewModule} from "primeng/dataview";
 import {DropdownModule} from "primeng/dropdown";
 import {RatingModule} from "primeng/rating";
@@ -26,6 +25,7 @@ import { TvShowAddComponent } from './components/tv-show-add/tv-show-add.compone
 import { TvShowDetailComponent } from './components/tv-show-detail/tv-show-detail.component';
 import { SearchComponent } from './components/search/search.component';
 import { HomeComponent } from './components/home/home.component';
+import {InputSwitchModule} from "primeng/inputswitch";
 
 @NgModule({
   declarations: [
@@ -53,7 +53,8 @@ import { HomeComponent } from './components/home/home.component';
     ButtonModule,
     CardModule,
     InputTextModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    InputSwitchModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
