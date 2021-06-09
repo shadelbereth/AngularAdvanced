@@ -18,7 +18,7 @@ export class MovieHomeComponent implements OnInit, OnDestroy { //Parent
     this.movieService.getMovies().then(movieResponse => {
       this.foundMovies = movieResponse
     });
-    this.movieService.test().subscribe(value => console.log("subscribed: ", value));
+    this.movieService.test().then(value => console.log("subscribed: ", value));
   }
 
   ngOnDestroy(): void {

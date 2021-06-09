@@ -39,13 +39,6 @@ export class MovieService {
 
   test () {
     MovieService.count += 1
-    return new Observable(subscriber => {
-      setInterval(() => {
-        subscriber.next("subscription count: " + MovieService.count)
-      }, 1000);
-      setTimeout(() => {
-        subscriber.complete();
-      }, 1500);
-    });
+    return Promise.resolve("subscription count: " + MovieService.count);
   }
 }
