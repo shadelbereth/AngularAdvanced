@@ -3,6 +3,7 @@ import {TvShow} from "../../../../models/TvShow";
 import {TvShowService} from "../../../../services/tv-show.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Movie} from "../../../../models/Movie";
+import {AuthService} from "../../../core/auth.service";
 
 @Component({
   selector: 'app-tv-show-detail',
@@ -13,7 +14,7 @@ export class TvShowDetailComponent implements OnInit {
 
   foundTvShow: TvShow | undefined;
 
-  constructor(private tvShowService: TvShowService, private activateRoute: ActivatedRoute, private router: Router) {
+  constructor(private tvShowService: TvShowService, private activateRoute: ActivatedRoute, private router: Router, public authService: AuthService) {
 
   }
 

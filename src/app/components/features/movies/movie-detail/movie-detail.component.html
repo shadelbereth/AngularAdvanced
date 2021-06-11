@@ -19,7 +19,7 @@
       </div>
     </div>
     <p-button routerLink="/movie/home">Go Back</p-button>
-    <p-button (click)="delete(movie)">Delete</p-button>
+    <p-button (click)="delete(movie)" *ngIf="authService.loggedIn">Delete</p-button>
   </ng-template>
 
 </p-card>

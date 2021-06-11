@@ -2,6 +2,8 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {MovieService} from "../../../../services/movie.service";
 import {Movie} from "../../../../models/Movie";
 import {ActivatedRoute, Router} from "@angular/router";
+import {AuthGuard} from "../../../core/auth.guard";
+import {AuthService} from "../../../core/auth.service";
 
 @Component({
   selector: 'app-movie-detail',
@@ -12,7 +14,7 @@ export class MovieDetailComponent implements OnInit {
 
   movie: Movie | undefined;
 
-  constructor(private movieService: MovieService, private activateRoute: ActivatedRoute, private router: Router) {
+  constructor(private movieService: MovieService, private activateRoute: ActivatedRoute, private router: Router, public authService: AuthService) {
   }
 
   ngOnInit(): void {

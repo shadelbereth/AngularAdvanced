@@ -18,7 +18,7 @@
       </div>
     </div>
     <p-button routerLink="/tvshow/home">Go Back</p-button>
-    <p-button (click)="delete(foundTvShow)">Delete</p-button>
+    <p-button (click)="delete(foundTvShow)" *ifNg="authService.loggedIn">Delete</p-button>
   </ng-template>
 
 </p-card>
