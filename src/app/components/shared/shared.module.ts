@@ -6,7 +6,6 @@ import {DropdownModule} from "primeng/dropdown";
 import {ButtonModule} from "primeng/button";
 import {CardModule} from "primeng/card";
 import {InputTextModule} from "primeng/inputtext";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {InputSwitchModule} from "primeng/inputswitch";
 import {ListComponent} from "../list/list.component";
 import {SearchComponent} from "../search/search.component";
@@ -25,7 +24,6 @@ import {MenubarModule} from "primeng/menubar";
     CardModule,
     InputTextModule,
     InputSwitchModule,
-    BrowserAnimationsModule,
     InputSwitchModule,
     MenubarModule
   ],
@@ -38,7 +36,6 @@ import {MenubarModule} from "primeng/menubar";
     CardModule,
     InputTextModule,
     InputSwitchModule,
-    BrowserAnimationsModule,
     InputSwitchModule,
     MenubarModule,
     ListComponent,
