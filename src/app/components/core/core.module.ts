@@ -14,6 +14,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MenubarModule} from "primeng/menubar";
 import {AppRoutingModule} from "../../app-routing.module";
 import { LoginComponent } from './login/login.component';
+import {AuthService} from "./auth.service";
+import {AuthGuard} from "./auth.guard";
 
 
 
@@ -45,6 +47,10 @@ import { LoginComponent } from './login/login.component';
     BrowserAnimationsModule,
     InputSwitchModule,
     MenubarModule
+  ],
+  providers: [
+    AuthService,
+    AuthGuard
   ]
 })
 export class CoreModule {

@@ -7,14 +7,17 @@ import {TvShowHomeComponent} from "./components/pages/tv-show-home/tv-show-home.
 import {TvShowDetailComponent} from "./components/features/tv-shows/tv-show-detail/tv-show-detail.component";
 import {TvShowAddComponent} from "./components/features/tv-shows/tv-show-add/tv-show-add.component";
 import {HomeComponent} from "./components/core/home/home.component";
+import {LoginComponent} from "./components/core/login/login.component";
+import {AuthGuard} from "./components/core/auth.guard";
 
 export const routes: Routes = [
   {path: 'home', component: HomeComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'tvshow/home', component: TvShowHomeComponent},
-  {path: 'tvshow/add', component: TvShowAddComponent},
+  {path: 'tvshow/add', component: TvShowAddComponent, canActivate: [AuthGuard]},
   {path: 'tvshow/detail/:id', component: TvShowDetailComponent},
   {path: 'movie/home', component: MovieHomeComponent},
-  {path: 'movie/add', component: MovieAddComponent},
+  {path: 'movie/add', component: MovieAddComponent, canActivate: [AuthGuard]},
   {path: 'movie/detail/:id', component: MovieDetailComponent},
   {path: '**', redirectTo:'home'}
 ];
