@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import {MovieHomeComponent} from "./components/pages/movie-home/movie-home.component";
 import {TvShowHomeComponent} from "./components/pages/tv-show-home/tv-show-home.component";
 import {HomeComponent} from "./components/core/home/home.component";
@@ -16,7 +16,7 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
