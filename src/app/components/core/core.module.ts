@@ -13,11 +13,12 @@ import {InputSwitchModule} from "primeng/inputswitch";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MenubarModule} from "primeng/menubar";
 import {AppRoutingModule} from "../../app-routing.module";
+import { LoginComponent } from './login/login.component';
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, HomeComponent],
+  declarations: [HeaderComponent, HomeComponent, LoginComponent],
   imports: [
     FormsModule,
     DataViewModule,
