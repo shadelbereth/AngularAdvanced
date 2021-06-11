@@ -16,6 +16,7 @@ import {AppRoutingModule} from "../../app-routing.module";
 import { LoginComponent } from './login/login.component';
 import {AuthService} from "./auth.service";
 import {AuthGuard} from "./auth.guard";
+import {MovieResolver} from "../../services/movie.resolver";
 
 
 
@@ -50,7 +51,8 @@ import {AuthGuard} from "./auth.guard";
   ],
   providers: [
     AuthService,
-    AuthGuard
+    AuthGuard,
+    MovieResolver
   ]
 })
 export class CoreModule {

@@ -1,8 +1,7 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MovieService} from "../../../../services/movie.service";
 import {Movie} from "../../../../models/Movie";
 import {ActivatedRoute, Router} from "@angular/router";
-import {AuthGuard} from "../../../core/auth.guard";
 import {AuthService} from "../../../core/auth.service";
 
 @Component({
@@ -18,8 +17,7 @@ export class MovieDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const id = this.activateRoute.snapshot.paramMap.get('id');
-    this.movieService.findMovie(Number(id)).then(movieResponse => this.movie = movieResponse);
+    this.movie = this.activateRoute.snapshot.data['movieDetail'];
   }
 
   delete(movie: Movie | undefined) {

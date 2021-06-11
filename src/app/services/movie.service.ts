@@ -22,7 +22,7 @@ export class MovieService {
   }
 
   findMovie(id: number) {
-    return this.http.get<Movie>(`${environment.movieApiUrl}/${id}`).toPromise();
+    return this.http.get<Movie>(`${environment.movieApiUrl}/${id}`);
   }
 
   lookupMovie(searchTitle: string) {
