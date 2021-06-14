@@ -1,1 +1,18 @@
-<p>tv-show-new works!</p>
+<form [formGroup]="newTvShowForm" (ngSubmit)="createNewTvShow()">
+  <p>Title</p>
+  <input pInputText formControlName="title">
+  <p>Year</p>
+  <input pInputText formControlName="year">
+  <p>Runtime</p>
+  <input pInputText formControlName="runtime">
+  <p>Seasons</p>
+  <input pInputText formControlName="seasons">
+  <p>Episodes</p>
+  <input pInputText formControlName="episodes">
+  <p>Overview</p>
+  <textarea cols="50" rows="10" formControlName="overview"></textarea>
+  <p>Poster URL</p>
+  <input pInputText formControlName="posterUrl">
+
+  <input pButton type="submit" value="Create" [disabled]="newTvShowForm.invalid">
+</form>

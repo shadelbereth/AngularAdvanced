@@ -40,6 +40,10 @@ export class HeaderComponent implements OnInit {
             label: 'WatchList',
             icon: 'pi pi-fw pi-video',
             routerLink: "/tvshow/home"
+          }, {
+            label: 'New TvShow',
+            icon: 'pi pi-fw pi-video',
+            routerLink: "/tvshow/new"
           }
         ]
       }]

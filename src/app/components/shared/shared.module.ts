@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {DataViewModule} from "primeng/dataview";
 import {DropdownModule} from "primeng/dropdown";
 import {ButtonModule} from "primeng/button";
@@ -39,7 +39,8 @@ import {MenubarModule} from "primeng/menubar";
     InputSwitchModule,
     MenubarModule,
     ListComponent,
-    SearchComponent
+    SearchComponent,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

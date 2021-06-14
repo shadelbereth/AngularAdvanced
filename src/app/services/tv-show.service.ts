@@ -32,4 +32,7 @@ export class TvShowService {
   }
 
 
+  createNewTvShow(tvShow: any) {
+    return this.http.post<TvShow>(`${environment.tvShowApiUrl}`, tvShow);
+  }
 }
